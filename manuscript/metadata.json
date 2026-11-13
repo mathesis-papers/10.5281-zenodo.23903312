@@ -1,0 +1,23 @@
+{
+  "id": "pozsgay-wanless-nonlinear-classical-factors",
+  "revision": 2,
+  "problem_ids": [
+    "pozsgay-wanless-2024-nonlinear-perfect-tensor-factors"
+  ],
+  "topic": "Classical triangular factor perfection and the Pozsgay–Wanless qubit decomposition conjecture, §5 after equation (5.13) and §8",
+  "title": "Resolving Pozsgay–Wanless's factor-perfection question and qubit decomposition conjecture",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "We resolve the nonlinear classical k=6 factor-perfection question of Pozsgay and Wanless, §5 immediately after equation (5.13), and their qubit decomposition conjecture in §8 for both constructions studied there (k=6,8). For arbitrary finite-alphabet gates, a perfect six-leg composite forces perfect factors. Six specified permutation flattenings characterize this property. A norm–determinant argument gives the quantum analogue for unitary gates, extending the prior forward construction of §3.2, Theorems 1–2. For arbitrary complex factors, the same six unitary exterior flattenings guarantee perfect replacement tensors at the same bond dimension. This excludes every six-qubit AME state from the three-vertex triangle with bond dimension two. The eight-qubit case follows from known AME nonexistence (Rains, DOI 10.1109/18.796376; Scott, DOI 10.1103/PhysRevA.69.052330).",
+  "summary": "Complete matrix and polar-decomposition proofs establish classical factor perfection, the six-partition criterion, the dual-unitary converse, quantum perfect replacements and six-qubit triangular nondecomposability. Combining the last result with cited eight-qubit AME nonexistence settles the source qubit conjecture for k=6,8. The linked Lean declaration proves the classical all-alphabet implication; the stronger classical and quantum results have written proofs, supplemented by exact finite checks.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/6715a5bea38a03c80f6c4da6de93fea88798f026/D5/S3/Combinatorics/Latin/ClassicalPerfectTensorFactorization.lean"
+}

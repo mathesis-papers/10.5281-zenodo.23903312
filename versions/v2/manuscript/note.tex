@@ -1,0 +1,598 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,allcolors=blue,breaklinks=true]{hyperref}
+\usepackage{microtype}
+\hypersetup{pdftitle={Resolving Pozsgay--Wanless's factor-perfection question and qubit decomposition conjecture},
+pdfauthor={Haobo Ma and Wenlin Zhang},pdfsubject={Classical and quantum perfect tensor factorization; CC BY 4.0}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\OA}{\operatorname{OA}}
+\newcommand{\ind}{\mathbf{1}}
+\title{Resolving Pozsgay--Wanless's factor-perfection question
+and qubit decomposition conjecture\\[4pt]
+\large \S5, after equation (5.13), and \S8}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{2 November 2026\\[3pt]\small
+\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We resolve the nonlinear classical $k=6$ factor-perfection question of
+Pozsgay and Wanless, \S5 immediately after equation (5.13), and their
+qubit decomposition conjecture in \S8, for both constructions studied
+there ($k=6,8$) \cite{PW}.
+For arbitrary maps $A,B,C:X^2\to X^2$ on a finite alphabet, if the graph of
+$C^{(23)}B^{(13)}A^{(12)}$ is an index-one orthogonal array of strength three,
+then every factor graph has strength two. No invertibility or linearity of
+the factors is assumed. A proof using nonnegative integer matrices gives
+the stronger equivalence between perfect factors and six specified
+permutation flattenings of the composite tensor. A norm--determinant
+argument gives the quantum analogue for unitary gates. For arbitrary
+complex factors, maximal exterior entanglement instead guarantees a
+decomposition by perfect replacement tensors of the same bond dimension.
+Consequently no six-qubit absolutely maximally entangled state has this
+three-vertex triangular decomposition with bond dimension two. The
+eight-qubit case follows from the known nonexistence of an eight-qubit
+absolutely maximally entangled state \cite{Rains,Scott}, completing the
+qubit conjecture for these two constructions.
+\end{abstract}
+
+\section{The question and its classical formulation}
+Pozsgay and Wanless \cite[\S5, paragraph after (5.13)]{PW} ask whether
+their linear six-leg factor-perfection result extends to nonlinear maps.
+We prove the classical assertion for every finite alphabet and give a
+quantum replacement theorem that settles their qubit decomposition
+conjecture in \S8 for $k=6,8$. Their
+factorization is \cite[(4.2)]{PW}
+\begin{equation}\label{circuit}
+ U=C^{(23)}B^{(13)}A^{(12)}.
+\end{equation}
+Here the superscripts indicate the two wires on which a map acts.
+With exterior symbols $x,y,z,p,q,r$ and interior symbols $u,v,w$, write
+\begin{equation}\label{wires}
+ A(x,y)=(u,v),\qquad B(u,z)=(p,w),\qquad C(v,w)=(q,r).
+\end{equation}
+Thus $U(x,y,z)=(p,q,r)$.
+
+For $D=|X|\ge1$, an index-one $\OA(D^s,n,D,s)$ is an array of $D^s$
+rows and $n$ columns whose projection onto any $s$ distinct columns is a
+bijection onto $X^s$. This is the convention in \cite[\S4]{PW} and
+\cite[\S III]{GZ}. The graph of a map $F:X^2\to X^2$ has rows
+$(a,b,F_1(a,b),F_2(a,b))$. We call $F$ \emph{perfect} when this graph is
+an $\OA(D^2,4,D,2)$; the graph of $U$ is perfect when it is an
+$\OA(D^3,6,D,3)$.
+
+These arrays give minimal-support absolutely maximally entangled states
+\cite{GZ,GALRZ}. Indeed, if an array has $D^s$ rows on $2s$ columns and
+every $s$-column projection is bijective, the normalized sum of its basis
+rows has coefficient matrix $D^{-s/2}P$ across every balanced partition,
+where $P$ is a permutation matrix. Each reduction is therefore $I/D^s$.
+Directional unitarity, studied for other geometries in \cite{MPW}, imposes
+a selected family of partitions rather than all balanced partitions.
+
+\begin{theorem}\label{main}
+Let $X$ be finite and let $A,B,C:X^2\to X^2$ be arbitrary maps. If the
+graph of \eqref{circuit} has strength three and index one, then the graphs
+of $A,B,C$ have strength two and index one.
+\end{theorem}
+
+\section{A matrix proof and a stronger criterion}
+All matrices in the proof are finite. A \emph{flattening} groups a
+tensor's indices into an ordered row tuple and an ordered column tuple.
+Changing the order within a tuple just permutes matrix rows or columns.
+
+\begin{lemma}\label{matrix}
+If square matrices $M_1,\ldots,M_m$ of the same size have nonnegative
+integer entries and $M_m\cdots M_1$ is a permutation matrix, then every
+$M_j$ is a permutation matrix.
+\end{lemma}
+\begin{proof}
+The product is nonsingular, so every factor is nonsingular. In particular,
+no factor has a zero row. For the all-ones column vector $\ind$, integrality
+implies $M_j\ind\ge\ind$ entrywise. Nonnegative matrices preserve entrywise
+inequalities, and hence
+\[
+ \ind=M_m\cdots M_1\ind\ge M_m\ind\ge\ind.
+\]
+Thus every row sum of $M_m$ is one. Each row consists of a single one and
+zeros, and nonsingularity makes those ones occupy distinct columns.
+Consequently $M_m$ is a permutation matrix. Multiply by $M_m^{-1}$ and
+repeat for the remaining product. The case $m=1$ starts the induction.
+\end{proof}
+
+Define binary tensors
+\[
+ a_{xyuv}=\ind_{A(x,y)=(u,v)},\quad
+ b_{uzpw}=\ind_{B(u,z)=(p,w)},\quad
+ c_{vwqr}=\ind_{C(v,w)=(q,r)}.
+\]
+Their contraction is
+\begin{equation}\label{contract}
+ T_{xyzpqr}=\sum_{u,v,w\in X}a_{xyuv}b_{uzpw}c_{vwqr}
+             =\ind_{U(x,y,z)=(p,q,r)}.
+\end{equation}
+The equality holds because an input triple determines exactly one
+consistent choice of the interior symbols. It does not presuppose
+bijectivity of any gate. A balanced flattening of $T$ is a permutation
+matrix exactly when the projections of its support onto both triples
+are bijections. In particular, perfection of the composite implies that
+every such flattening is a permutation matrix.
+
+For example, $A:xu\to yv$ denotes the matrix with columns indexed by
+$(x,u)$, rows indexed by $(y,v)$ and entry $a_{xyuv}$.
+An arrow denotes a matrix, not an assumption that the relation is
+single-valued in that direction.
+
+\begin{theorem}\label{six}
+For $D\ge1$, the following conditions are equivalent:
+\begin{enumerate}
+\item The three gates $A,B,C$ are perfect.
+\item The six flattenings of $T$ whose column triples are
+\[
+ xyz,\quad xyp,\quad xzp,\quad yzp,\quad xyq,\quad xyr
+\]
+and whose row triples are the respective complementary triples are
+permutation matrices.
+\end{enumerate}
+Equivalently, the twelve three-column projections containing one of the
+pairs $xy$, $zp$, $qr$ are bijective.
+\end{theorem}
+\begin{proof}
+The six flattenings factor as shown in Table~\ref{cuts}. Each factor
+acts on two live symbols while the remaining symbol passes unchanged.
+It is therefore a row/column permutation of a local $D^2\times D^2$
+flattening tensored with $I_D$.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Exterior input & First factor & Second factor & Third factor & Exterior output\\
+\midrule
+$xyz$ & $A:xy\to uv$ & $B:uz\to pw$ & $C:vw\to qr$ & $pqr$\\
+$xyp$ & $A:xy\to uv$ & $B:up\to zw$ & $C:vw\to qr$ & $zqr$\\
+$xzp$ & $B:zp\to uw$ & $A:xu\to yv$ & $C:vw\to qr$ & $yqr$\\
+$yzp$ & $B:zp\to uw$ & $A:yu\to xv$ & $C:vw\to qr$ & $xqr$\\
+$xyq$ & $A:xy\to uv$ & $C:vq\to wr$ & $B:uw\to zp$ & $zpr$\\
+$xyr$ & $A:xy\to uv$ & $C:vr\to wq$ & $B:uw\to zp$ & $zpq$\\
+\bottomrule
+\end{tabular}
+\caption{Six products of lifted local matrices. Factors act left to right
+in the table; the matrix product has the reverse written order.}\label{cuts}
+\end{table}
+
+To check these products without any invertibility assumption, the live
+triples in their six rows are, respectively,
+\begin{align*}
+xyz&\longrightarrow uvz\longrightarrow pvw\longrightarrow pqr,\\
+xyp&\longrightarrow uvp\longrightarrow vzw\longrightarrow zqr,\\
+xzp&\longrightarrow xuw\longrightarrow yvw\longrightarrow yqr,\\
+yzp&\longrightarrow yuw\longrightarrow xvw\longrightarrow xqr,\\
+xyq&\longrightarrow uvq\longrightarrow uwr\longrightarrow zpr,\\
+xyr&\longrightarrow uvr\longrightarrow uwq\longrightarrow zpq.
+\end{align*}
+Each matrix entry is exactly the sum in \eqref{contract}: every interior
+symbol is summed once and every exterior symbol remains free.
+
+Assume condition 2. Lemma~\ref{matrix} makes every lifted factor a
+permutation matrix. For $D\ge1$, $M\otimes I_D$ is a permutation matrix
+if and only if $M$ is: its row and column sums are those of $M$, repeated
+$D$ times. Table~\ref{cuts} consequently proves all three balanced local
+partitions for each gate:
+\[
+\begin{array}{c|ccc}
+A&xy\mid uv&xu\mid yv&xv\mid yu\\
+B&uz\mid pw&up\mid zw&uw\mid zp\\
+C&vw\mid qr&vq\mid wr&vr\mid wq.
+\end{array}
+\]
+Transposing a permutation matrix exchanges the two sides. Thus the table
+covers all six two-column projections of every gate graph, proving
+condition 1.
+
+Conversely, condition 1 makes every local flattening in Table~\ref{cuts}
+a permutation matrix. Its lifts and each of the six products are
+permutation matrices, proving condition 2. The twelve triples in the
+statement are the six column triples and their six distinct complements;
+they are exactly the triples containing a full pair among $xy,zp,qr$.
+\end{proof}
+
+Theorem~\ref{main} follows since a strength-three graph supplies all
+twenty projections and hence the twelve used in Theorem~\ref{six}.
+For $X=\varnothing$, every relevant graph and target tuple set is empty;
+the required projections are bijective. For $D=1$, all the matrices
+above have size one and the argument applies unchanged.
+
+\section{Quantum factors and replacement tensors}
+For this section $D\ge1$ and $a,b,c$ in \eqref{contract} may have arbitrary
+complex entries. A four-leg tensor is \emph{perfect} if its three
+$D^2\times D^2$ balanced flattenings are unitary. A six-leg tensor is
+perfect if its ten balanced flattenings are unitary. The corresponding
+normalized states have coefficients $D^{-1}a$ and $D^{-3/2}T$,
+respectively. Transpose, without complex conjugation, exchanges the two
+sides of a flattening and preserves unitarity.
+
+\begin{lemma}\label{normdet}
+Let $M_1,\ldots,M_m$ be complex $n\times n$ matrices with
+$\|M_j\|_F^2=n$. If $M_m\cdots M_1$ is unitary, every $M_j$ is unitary.
+\end{lemma}
+\begin{proof}
+Writing $s_1,\ldots,s_n$ for the singular values of a factor gives
+\[
+ |\det M_j|^2=\prod_{i=1}^n s_i^2
+ \le \left(\frac{\sum_i s_i^2}{n}\right)^n=1.
+\]
+The product of these determinant moduli is one, so equality holds for
+every factor. Equality in the arithmetic--geometric mean inequality
+forces all its squared singular values to be one.
+\end{proof}
+
+\begin{theorem}\label{quantum}
+If $A,B,C$ are ordinary unitary two-site gates, then their three
+four-leg tensors are perfect if and only if the six exterior flattenings
+in Table~\ref{cuts} are unitary.
+\end{theorem}
+\begin{proof}
+Every reshuffling of an ordinary unitary gate has squared Frobenius norm
+$D^2$. Its spectator lift has size $D^3$ and squared Frobenius norm
+$D^3$. The products in Table~\ref{cuts} hold for complex entries as well.
+Lemma~\ref{normdet} therefore makes every local balanced flattening
+unitary. Conversely, perfect factors give products of unitaries in all
+six rows, as established by Pozsgay and Wanless
+\cite[\S3.2, Theorems 1--2]{PW}.
+\end{proof}
+
+For arbitrary complex factors the supplied tensors need not be perfect:
+an invertible matrix on one end of an internal bond and its inverse on
+the other end leave the contraction unchanged. The correct conclusion
+is the existence of perfect replacement tensors. The next theorem gives
+a converse at the level of decompositions to the forward construction
+of \cite[\S3.2, Theorems 1--2]{PW}.
+
+\begin{theorem}\label{replacement}
+Suppose a complex six-leg tensor has the triangular contraction
+\eqref{contract}, with every exterior and interior index of dimension
+$D$. If its six flattenings in Table~\ref{cuts} are unitary, the same
+tensor has a contraction of this form with three perfect four-leg
+tensors and the same bond dimension $D$.
+\end{theorem}
+\begin{proof}
+Group the exterior legs as $a=(x,y)$, $b=(z,p)$ and $c=(q,r)$, and put
+\[
+ |\Omega\rangle=D^{-3/2}\sum_{u,v,w}
+ |u,v\rangle_a|u,w\rangle_b|v,w\rangle_c.
+\]
+This is a product of three normalized maximally entangled pairs; each
+grouped marginal is $I_{D^2}/D^2$. Define square local matrices by
+\[
+ (F_a)_{xy,uv}=a_{xyuv},\quad
+ (F_b)_{zp,uw}=b_{uzpw},\quad
+ (F_c)_{qr,vw}=c_{vwqr}.
+\]
+Then the normalized exterior state is
+$|\Psi\rangle=(F_a\otimes F_b\otimes F_c)|\Omega\rangle$.
+The unitary flattenings imply that $\Psi$ is normalized and each grouped
+marginal is $I_{D^2}/D^2$: the pairs $xy$ and $qr$ lie on sides of
+$xyz\mid pqr$, and $zp$ lies on a side of $xzp\mid yqr$.
+Full rank of these marginals makes all three $F_i$ invertible.
+
+Write the polar decompositions $F_i=V_iP_i$, with $V_i$ unitary and
+$P_i$ positive definite. Let
+\[
+ H=(\log P_a)\otimes I\otimes I+
+ I\otimes(\log P_b)\otimes I+
+ I\otimes I\otimes(\log P_c).
+\]
+The state $|\Phi\rangle=(V_a^\dagger\otimes V_b^\dagger\otimes
+V_c^\dagger)|\Psi\rangle=e^H|\Omega\rangle$ is also normalized with
+the same grouped marginals. For $f(t)=\|e^{tH}\Omega\|^2$, these
+marginals give
+\[
+ f'(0)=\frac{2}{D^2}\sum_{i=a,b,c}\operatorname{tr}(\log P_i)
+       =f'(1),\qquad
+ f''(t)=4\|He^{tH}\Omega\|^2\ge0.
+\]
+The integral of $f''$ on $[0,1]$ vanishes. By continuity $H\Omega=0$,
+so $e^H\Omega=\Omega$ and
+\[
+ |\Psi\rangle=(V_a\otimes V_b\otimes V_c)|\Omega\rangle.
+\]
+This is precisely the same triangular tensor, with the entries of the
+three $V_i$ as replacement vertices. Each has squared Frobenius norm
+$D^2$ in every reshuffling. Lemma~\ref{normdet} applied to the six
+unchanged exterior flattenings now makes every balanced local
+flattening unitary.
+\end{proof}
+
+The polar argument is the equal-marginal critical-state uniqueness
+principle underlying Kempf--Ness theory; compare
+\cite[Theorem 2 and the following paragraph]{GKW}. The proof above
+establishes the needed statement directly for grouped dimension $D^2$.
+It also shows that any triangle state of this form with maximally mixed
+grouped marginals on $xy$, $zp$ and $qr$ is local-unitarily equivalent,
+with respect to these three dimension-$D^2$ nodes, to three maximally
+entangled pairs of dimension $D$; at $D=2$ these are three Bell pairs.
+
+\begin{corollary}\label{qubits}
+No six-qubit absolutely maximally entangled state admits the triangular
+three-vertex contraction \eqref{contract} with interior bond dimension
+two, even with arbitrary complex starting tensors.
+\end{corollary}
+\begin{proof}
+Such a state would satisfy all ten balanced unitary conditions after
+the stated normalization. Theorem~\ref{replacement} would then produce
+perfect four-qubit tensors, which do not exist
+\cite[\S2]{HS}.
+\end{proof}
+
+Pozsgay and Wanless \cite[\S8]{PW} write that they ``conjectured that
+AME states with qubits cannot be decomposed in the way that we
+formulated here''; see also the end of \S3.2. This conjecture is now
+settled completely for both constructions in their paper: Corollary~\ref{qubits}
+handles $k=6$, with the stated topology and bond dimension, while $k=8$
+is vacuous because no eight-qubit AME state exists
+\cite[Theorem 14 in the arXiv version]{Rains}\cite[\S III, after Table I]{Scott}.
+Indeed, such an AME state would define a pure $((8,1,5))$ quantum code,
+whereas Rains's bound for length $6m+\ell=8$ ($m=1$, $\ell=2$) gives
+$d\le 2m+2=4$.
+Kraft et al.\ \cite[Table I]{Kraft}
+previously studied triangle-network entanglement and obtained a
+putative squared maximal overlap $1/2$ for a six-qubit AME target by a
+see-saw algorithm. Their optimization concerns pair sources and local
+unitaries. Here the exclusion is analytic and allows arbitrary complex
+vertices with the specified bond dimension; no overlap optimum is asserted.
+
+\section{Consequences and examples}
+\begin{corollary}\label{reverse}
+Theorem~\ref{main} holds for every chronological order of the three
+distinct pair interactions $12,13,23$, including the opposite order
+$U=A^{(12)}B^{(13)}C^{(23)}$.
+\end{corollary}
+\begin{proof}
+Permuting three wires induces every permutation of the three pair
+interactions. Apply the original theorem after such a relabeling;
+swapping the arguments and outputs of an individual gate preserves
+perfection. In particular, under $1\leftrightarrow3$ the gates act, in
+chronological order, on $(1,2),(1,3),(2,3)$. The relabeling may exchange
+the two arguments and the two outputs of a gate; such exchanges simply
+permute columns of its graph. The same is true of the six exterior
+columns. Apply Theorem~\ref{main} and undo those permutations.
+\end{proof}
+
+The forward implication of Theorem~\ref{six}, from perfect factors to
+twelve orthogonal projections, is the classical observation of
+\cite[\S4, following (4.2)]{PW}. The converse supplies an exact criterion.
+The other eight triples choose one symbol from each of $xy,zp,qr$.
+Their orthogonality is an additional condition, as the following example
+shows.
+
+Over $\mathbb F_3$ take all three gates equal to
+\[
+ F(a,b)=(a+b,a-b).
+\]
+Every coefficient is nonzero and the determinant is $-2\ne0$, so the
+two outputs are Latin in each argument and $F$ is bijective; these are
+precisely the six two-column conditions. Yet the composite is
+\[
+ U(x,y,z)=(x+y+z,\,2x-z,\,-2y+z).
+\]
+For fixed $x,z$, the second output is independent of $y$. The projection
+onto $(x,z,q)$ is not injective, so the composite is not perfect. This is
+the four-column array of \cite[Table 1]{PW} used at each gate.
+
+\begin{corollary}\label{dual}
+For classical gates, the three flattenings
+$xyz\mid pqr$, $yzp\mid xqr$ and $xyr\mid zpq$ are permutation
+matrices if and only if the following two flattenings of each gate are
+permutation matrices:
+\[
+\begin{array}{c|cc}
+A&xy\mid uv&xv\mid yu\\
+B&uz\mid pw&uw\mid zp\\
+C&vw\mid qr&vr\mid wq.
+\end{array}
+\]
+For ordinary unitary quantum gates, the same equivalence holds with
+``unitary'' in place of ``permutation''.
+\end{corollary}
+\begin{proof}
+Rows 1, 4 and 6 of Table~\ref{cuts} use precisely these local
+partitions, with some sides exchanged. Apply Lemma~\ref{matrix} in the
+classical case and Lemma~\ref{normdet} in the quantum case. The converse
+in each case follows by multiplication.
+\end{proof}
+These are the ordinary and geometrically dual local partitions and the
+three hexagonal exterior partitions in \cite[\S3.2, Theorem 1]{PW}.
+Thus the corollary supplies the converse for the specified triangular
+factorization.
+
+\paragraph{Irredundancy of the six specified conditions.}
+None of the six conditions in Theorem~\ref{six} can be deleted from
+that family. To see this, over $\mathbb F_3$ use $F$ at all gates
+except the replacement in the following table. The last column gives
+the numbers of distinct projections on the two sides of the indicated
+partition. Every other named partition has $27$ projections on each
+side, so its flattening is a permutation matrix.
+\[
+\begin{array}{c|c|c}
+\text{failed partition}&\text{replacement}&\text{projection sizes}\\\hline
+xyz\mid pqr&B(u,z)=(u+z,u+z)&27,9\\
+xyp\mid zqr&B(u,z)=(u,z)&9,9\\
+xzp\mid yqr&A(x,y)=(x,y)&9,9\\
+yzp\mid xqr&A(x,y)=(y,x)&9,9\\
+xyq\mid zpr&C(v,w)=(v,w)&9,9\\
+xyr\mid zpq&C(v,w)=(w,v)&9,9
+\end{array}
+\]
+The sizes follow by taking ranks of the two $3\times3$ linear
+projection maps over $\mathbb F_3$; they are also enumerated in
+\texttt{verify.py}. This establishes irredundancy of the named family,
+not minimality among all possible characterizations.
+
+\paragraph{Nonlinear factors.}
+Internal symbol permutations preserve both the composite and local
+perfection. If $\phi,\psi,\theta$ are permutations of $X$, replace the
+gates by
+\begin{align*}
+ A'(x,y)&=(\phi(A_1(x,y)),\psi(A_2(x,y))),\\
+ B'(u,z)&=(B_1(\phi^{-1}(u),z),
+                 \theta(B_2(\phi^{-1}(u),z))),\\
+ C'(v,w)&=C(\psi^{-1}(v),\theta^{-1}(w)).
+\end{align*}
+Substitution in \eqref{wires} proves equality of the composites.
+Each local graph changes by separate symbol permutations in its columns,
+so its orthogonal-array property is unchanged.
+For example, use the three matrices of \cite[Example 3]{PW} over
+$\mathbb F_5$,
+\[
+ A=\begin{pmatrix}3&4\\3&1\end{pmatrix},\quad
+ B=\begin{pmatrix}4&1\\1&3\end{pmatrix},\quad
+ C=\begin{pmatrix}3&1\\3&4\end{pmatrix},\quad
+ G=\begin{pmatrix}2&1&1\\2&2&3\\1&4&2\end{pmatrix}.
+\]
+The choice $\phi(t)=\psi(t)=\theta(t)=t^3$, a self-inverse permutation
+of $\mathbb F_5$, gives three non-affine gates with the same perfect
+composite $G$. This example is a relabeling of the cited linear example,
+not a new equivalence class of arrays.
+
+To preserve the Yang--Baxter equality of the two orders as well, conjugate
+every wire by the same symbol permutation $s$. Set
+\[
+ A_s=(s\times s)A(s^{-1}\times s^{-1}),
+ \quad B_s=(s\times s)B(s^{-1}\times s^{-1}),
+ \quad C_s=(s\times s)C(s^{-1}\times s^{-1}).
+\]
+Writing $S=s\times s\times s$, either ordered product is the
+corresponding original product conjugated by $S$. Example 3 of
+\cite{PW} has equal products in the two orders; hence the equality
+survives. For $s(t)=t^3$ the three conjugated gates are non-affine,
+perfect, and have a perfect composite. The exact finite checks enumerate
+all their rows. These are non-affine representatives of the same
+symbol-equivalence class.
+
+\section{Coverage and mathematical verification}
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}p{.35\linewidth}p{.60\linewidth}@{}}
+\toprule
+Item in Pozsgay--Wanless \cite{PW} & Coverage\\
+\midrule
+\S5, after (5.13): nonlinear classical $k=6$ factors
+ & Proved by Theorem~\ref{main}.\\
+\S3.1: opposite triangular order
+ & All six chronological orders covered by Corollary~\ref{reverse}.\\
+\S4: twelve orthogonal projections from perfect factors
+ & Prior implication reproduced and strengthened to an equivalence in
+   Theorem~\ref{six}.\\
+\S3.2: perfection of all factors versus all ten balanced partitions
+ & Converse fails; the $\mathbb F_3$ example separates the conditions.\\
+\S3.2, Theorems 1--2: dual/perfect factors give three/six unitary flattenings
+ & Prior forward implications credited; converses proved in
+   Corollary~\ref{dual} and Theorem~\ref{quantum}.\\
+\S3.1 and Example 3: perfect Yang--Baxter factors
+ & Prior existence example cited; global wire conjugation gives
+   non-affine representatives preserving both orders.\\
+\S\S5--6: linear existence tests and small alphabet cases
+ & Existing linear conclusions retained; nonlinear existence at $D=4$
+   is not determined by the factor-perfection implication.\\
+\S7: eight-leg networks at $D\ge3$
+ & Not covered. Example 5 already has an identity factor and a perfect
+   composite, so an unrestricted eight-leg analogue is false.\\
+\S8 (also end of \S3.2): qubit decomposition conjecture, $k=6,8$
+ & Settled completely: $k=6$ by Corollary~\ref{qubits}, including arbitrary
+   complex vertices of bond dimension two; $k=8$ by nonexistence of
+   eight-qubit AME states \cite{Rains,Scott}.\\
+\S8: quantum $D=3,4$ existence; Appendix B: graph-state gate counts
+ & Existence is reduced to perfect replacements; these existence
+   questions and unrestricted gate counts remain undetermined here.\\
+\bottomrule
+\end{tabular}
+\caption{Coverage of the posing question and neighboring statements.}
+\label{coverage}
+\end{table}
+
+\paragraph{Mathematical verification.}
+The declaration \texttt{result : claim} in the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/6715a5bea38a03c80f6c4da6de93fea88798f026/D5/S3/Combinatorics/Latin/ClassicalPerfectTensorFactorization.lean}{Lean source}
+belongs to the namespace
+\begin{center}\small
+\nolinkurl{D5.S3.Combinatorics.Latin.ClassicalPerfectTensorFactorization}.
+\end{center}
+It proves precisely
+Theorem~\ref{main}'s implication for every finite alphabet, including the
+empty case, with \texttt{circuitGraph} columns $(x,y,z,p,q,r)$ and
+\texttt{gateGraph} columns consisting of the two inputs and two outputs.
+All other results, including the quantum replacement theorem and its
+six-qubit consequence, have written proofs here; the eight-qubit
+nonexistence statement is the cited consequence of Rains's bound.
+The accompanying source
+archive contains \texttt{verify.py} and its deterministic expected output
+\texttt{verification.json}. It checks the displayed examples by exact
+arithmetic, exhausts all $24^3$ binary permutation-gate circuits, and
+checks Corollary~\ref{dual} on all $81^3$ triples of linear gates over
+$\mathbb F_3$. These finite checks supplement the general proofs.
+
+\begin{thebibliography}{9}
+\bibitem{PW}
+B. Pozsgay and I. M. Wanless,
+\emph{Tensor network decompositions for absolutely maximally entangled
+states}, Quantum \textbf{8} (2024), 1339.
+\href{https://doi.org/10.22331/q-2024-05-08-1339}{doi:10.22331/q-2024-05-08-1339}.
+\href{https://arxiv.org/abs/2308.07042v3}{arXiv:2308.07042v3}.
+
+\bibitem{GZ}
+D. Goyeneche and K. \.{Z}yczkowski,
+\emph{Genuinely multipartite entangled states and orthogonal arrays},
+Phys. Rev. A \textbf{90} (2014), 022316.
+\href{https://doi.org/10.1103/PhysRevA.90.022316}{doi:10.1103/PhysRevA.90.022316}.
+
+\bibitem{GALRZ}
+D. Goyeneche, D. Alsina, J. I. Latorre, A. Riera, and K. \.{Z}yczkowski,
+\emph{Absolutely maximally entangled states, combinatorial designs, and
+multiunitary matrices}, Phys. Rev. A \textbf{92} (2015), 032316.
+\href{https://doi.org/10.1103/PhysRevA.92.032316}{doi:10.1103/PhysRevA.92.032316}.
+
+\bibitem{MPW}
+M. Mesty\'an, B. Pozsgay, and I. M. Wanless,
+\emph{Multi-directional unitarity and maximal entanglement in spatially
+symmetric quantum states}, SciPost Phys. \textbf{16} (2024), 010.
+\href{https://doi.org/10.21468/SciPostPhys.16.1.010}{doi:10.21468/SciPostPhys.16.1.010}.
+
+\bibitem{GKW}
+G. Gour, B. Kraus, and N. R. Wallach,
+\emph{Almost all multipartite qubit quantum states have trivial stabilizer},
+J. Math. Phys. \textbf{58} (2017), 092204.
+\href{https://doi.org/10.1063/1.5003015}{doi:10.1063/1.5003015}.
+
+\bibitem{HS}
+A. Higuchi and A. Sudbery,
+\emph{How entangled can two couples get?}, Phys. Lett. A
+\textbf{273} (2000), 213--217.
+\href{https://doi.org/10.1016/S0375-9601(00)00480-1}{doi:10.1016/S0375-9601(00)00480-1}.
+
+\bibitem{Kraft}
+T. Kraft, S. Designolle, C. Ritz, N. Brunner, O. G\"uhne, and M. Huber,
+\emph{Quantum entanglement in the triangle network}, Phys. Rev. A
+\textbf{103} (2021), L060401.
+\href{https://doi.org/10.1103/PhysRevA.103.L060401}{doi:10.1103/PhysRevA.103.L060401}.
+
+\bibitem{Rains}
+E. M. Rains,
+\emph{Quantum shadow enumerators}, IEEE Trans. Inf. Theory
+\textbf{45} (1999), 2361--2366.
+\href{https://doi.org/10.1109/18.796376}{doi:10.1109/18.796376}.
+\href{https://arxiv.org/abs/quant-ph/9611001v2}{arXiv:quant-ph/9611001v2}.
+
+\bibitem{Scott}
+A. J. Scott,
+\emph{Multipartite entanglement, quantum-error-correcting codes, and
+entangling power of quantum evolutions}, Phys. Rev. A
+\textbf{69} (2004), 052330.
+\href{https://doi.org/10.1103/PhysRevA.69.052330}{doi:10.1103/PhysRevA.69.052330}.
+\href{https://arxiv.org/abs/quant-ph/0310137}{arXiv:quant-ph/0310137}.
+\end{thebibliography}
+\end{document}

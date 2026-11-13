@@ -1,0 +1,14 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "pozsgay-wanless-nonlinear-classical-factors",
+  "version": 2,
+  "repository_url": "https://github.com/mathesis-papers/6aec3853a5db6bd59598cc5c",
+  "site_url": "https://papers.trureturing.org/6aec3853a5db6bd59598cc5c/",
+  "doi": "10.5281/zenodo.23903313",
+  "reading": {
+    "en": "https://papers.trureturing.org/6aec3853a5db6bd59598cc5c/en/",
+    "zh": "https://papers.trureturing.org/6aec3853a5db6bd59598cc5c/zh/"
+  },
+  "slides": [],
+  "visualizations": []
+}

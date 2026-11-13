@@ -1,0 +1,270 @@
+{
+  "arithmetic": "exact integer arithmetic modulo 3 or 5; exact finite-set projections",
+  "binary_exhaustion": {
+    "circuits": 13824,
+    "perfect_composites": 0,
+    "perfect_gates": 0,
+    "permutation_gates": 24,
+    "six_partition_equivalence": true,
+    "twelve_projection_composites": 0
+  },
+  "boundary_alphabets": {
+    "0": {
+      "circuit_perfect": true,
+      "circuit_rows": 0,
+      "gate_perfect": true
+    },
+    "1": {
+      "circuit_perfect": true,
+      "circuit_rows": 1,
+      "gate_perfect": true
+    }
+  },
+  "five_symbol_example": {
+    "circuit_rows": 125,
+    "circuit_triple_projections": 20,
+    "gate_pair_projections": [
+      6,
+      6,
+      6
+    ]
+  },
+  "guaranteed_triples": [
+    "xyz",
+    "xyp",
+    "xyq",
+    "xyr",
+    "xzp",
+    "xqr",
+    "yzp",
+    "yqr",
+    "zpq",
+    "zpr",
+    "zqr",
+    "pqr"
+  ],
+  "index_patterns": 6,
+  "nonlinear_relabeling": {
+    "circuit_rows": 125,
+    "circuit_triple_projections": 20,
+    "gate_pair_projections": [
+      6,
+      6,
+      6
+    ],
+    "non_affine_gates": 3,
+    "same_composite": true
+  },
+  "nonlinear_yang_baxter": {
+    "circuit_rows": 125,
+    "circuit_triple_projections": 20,
+    "gate_pair_projections": [
+      6,
+      6,
+      6
+    ],
+    "non_affine_gates": 3,
+    "opposite_orders_equal": true,
+    "wire_conjugation_formula": true
+  },
+  "schema_version": 1,
+  "six_condition_irredundancy": {
+    "xyp": {
+      "xyp": [
+        9,
+        9
+      ],
+      "xyq": [
+        27,
+        27
+      ],
+      "xyr": [
+        27,
+        27
+      ],
+      "xyz": [
+        27,
+        27
+      ],
+      "xzp": [
+        27,
+        27
+      ],
+      "yzp": [
+        27,
+        27
+      ]
+    },
+    "xyq": {
+      "xyp": [
+        27,
+        27
+      ],
+      "xyq": [
+        9,
+        9
+      ],
+      "xyr": [
+        27,
+        27
+      ],
+      "xyz": [
+        27,
+        27
+      ],
+      "xzp": [
+        27,
+        27
+      ],
+      "yzp": [
+        27,
+        27
+      ]
+    },
+    "xyr": {
+      "xyp": [
+        27,
+        27
+      ],
+      "xyq": [
+        27,
+        27
+      ],
+      "xyr": [
+        9,
+        9
+      ],
+      "xyz": [
+        27,
+        27
+      ],
+      "xzp": [
+        27,
+        27
+      ],
+      "yzp": [
+        27,
+        27
+      ]
+    },
+    "xyz": {
+      "xyp": [
+        27,
+        27
+      ],
+      "xyq": [
+        27,
+        27
+      ],
+      "xyr": [
+        27,
+        27
+      ],
+      "xyz": [
+        27,
+        9
+      ],
+      "xzp": [
+        27,
+        27
+      ],
+      "yzp": [
+        27,
+        27
+      ]
+    },
+    "xzp": {
+      "xyp": [
+        27,
+        27
+      ],
+      "xyq": [
+        27,
+        27
+      ],
+      "xyr": [
+        27,
+        27
+      ],
+      "xyz": [
+        27,
+        27
+      ],
+      "xzp": [
+        9,
+        9
+      ],
+      "yzp": [
+        27,
+        27
+      ]
+    },
+    "yzp": {
+      "xyp": [
+        27,
+        27
+      ],
+      "xyq": [
+        27,
+        27
+      ],
+      "xyr": [
+        27,
+        27
+      ],
+      "xyz": [
+        27,
+        27
+      ],
+      "xzp": [
+        27,
+        27
+      ],
+      "yzp": [
+        9,
+        9
+      ]
+    }
+  },
+  "ternary_counterexample": {
+    "circuit_rows": 27,
+    "collision_projection": "xzq",
+    "collision_rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    ],
+    "failed_triples": [
+      "xzq",
+      "xpr",
+      "yzr",
+      "ypq"
+    ],
+    "gate_pair_projections": [
+      6,
+      6,
+      6
+    ],
+    "orthogonal_triples": 16
+  },
+  "ternary_linear_dual_equivalence": {
+    "circuits": 531441,
+    "dual_gates": 28,
+    "equivalence": true,
+    "hexagonal_composites": 21952,
+    "linear_gates": 81
+  }
+}
