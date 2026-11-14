@@ -1,7 +1,7 @@
 {
   "git_blobs": {
     ".github/workflows/pages.yml": "7879724db1358178aad7e9bed326a44be44f5a6a",
-    ".mathesis/generated.json": "a4bfe899a7d86c0825b8d9c9f3a3bce366c72b80",
+    ".mathesis/generated.json": "aa42d2c574f55714ff93a5997b1bc54708a6946c",
     "CHANGELOG.md": "4136c95c0d733d56f60f28397dd37e064b29744b",
     "CITATION.cff": "9b053c3107453646b308ce18d5433364bcfed9a8",
     "CONTRIBUTING.md": "ea69168fc2cb506b57b00de1ef588aaf011aa3da",
@@ -14,12 +14,13 @@
     "manuscript/note.tex": "2da237392f9b04e45095bcb329fcfd0374bec3ce",
     "manuscript/verification.json": "c5b6be0a3c92932eaedffba4dfee9df47b1dcaf1",
     "manuscript/verify.py": "44cad352524116d4e92cc1a2e3a2765ee1446999",
-    "paper.json": "c2c27e79fbab8f8de9e8a851fc09871c17f228a1",
+    "paper.json": "808d73a6c51d817c2f8eab2e09d04d25ebb23b73",
     "paper.pdf": "b4e6d43c5b2c26b4a7af002b81c92b21ae462d64",
     "site/en/index.html": "d3fbfef78d67a1bbe412038f75bdbffe95bfd60a",
-    "site/index.html": "690b2b7791f796af365bf21246301d15d691b8e2",
+    "site/index.html": "0c5932c6a849c5a6a9f8e8606ac95f8d3a1e32f4",
     "site/mathesis-materials.json": "00f90f6e76a8bd6b6284d752ac57e62ad0300a7f",
     "site/zh/index.html": "edaf4028355cbe03c4e3c1aa08e57bceabaa3166",
+    "source.archive": "223e670e78181aa7f86ecd4934a4d755959dc799",
     "versions/v2/.mathesis/generated.json": "0d0a516826be2f679bcc1f4361cba16ba9039293",
     "versions/v2/CHANGELOG.md": "4136c95c0d733d56f60f28397dd37e064b29744b",
     "versions/v2/CITATION.cff": "9b053c3107453646b308ce18d5433364bcfed9a8",
@@ -34,12 +35,13 @@
     "versions/v2/manuscript/verification.json": "c5b6be0a3c92932eaedffba4dfee9df47b1dcaf1",
     "versions/v2/manuscript/verify.py": "44cad352524116d4e92cc1a2e3a2765ee1446999",
     "versions/v2/paper.json": "9cebfe1ce3e10268d46e9c1486cd53e05c0d702d",
-    "versions/v2/paper.pdf": "b4e6d43c5b2c26b4a7af002b81c92b21ae462d64"
+    "versions/v2/paper.pdf": "b4e6d43c5b2c26b4a7af002b81c92b21ae462d64",
+    "versions/v2/source.archive": "223e670e78181aa7f86ecd4934a4d755959dc799"
   },
   "schema": "mathesis.paper-collection.v1",
   "sha256": {
     ".github/workflows/pages.yml": "f15d983dcb8f324ffdedb50b05f7380e11fda8723d49b5c8f10ef0f414612372",
-    ".mathesis/generated.json": "22ae4d7654193350de6f19e8fa1b0f66277cb16ae4f49cfaea14f052ab1c2ee5",
+    ".mathesis/generated.json": "a098b10270903bc30edf0ecd45373f5f4c48f78e84dbf933c06370d7542b0abc",
     "CHANGELOG.md": "5b9f7093fc8c369382465584ce97f40d7afc63a433f87cda0d1ededf7d1971bc",
     "CITATION.cff": "c9d842ea58881f95064b422e28d18592903b490d67d38c2a97eece51c476efc0",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
@@ -52,12 +54,13 @@
     "manuscript/note.tex": "87b3a5c5a0e7d79b6908142ed0c2ac80efe871a6d39d8f33fc6f0783e40c424d",
     "manuscript/verification.json": "f8b86dc8bfbeb6b3c3ee22f2ca303692fc2896349d8054ef0527d72650f939f5",
     "manuscript/verify.py": "da1df1849a2fdd4a8b4e366ba318011792c87a9d38af1b74fd6957881da93b26",
-    "paper.json": "0221a521ab7c2da5d37fb3ae50146e8c12a5c3ed31109da36e6ffbad5e777898",
+    "paper.json": "2be1cb94720c820f574f6f0676cfdf19a09aca75cb8f040809e3858ae783d005",
     "paper.pdf": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695",
     "site/en/index.html": "39ed19bb60bf1a5328536466f379121aacb2afeb799befa98854dfd213de15e4",
-    "site/index.html": "f894d1a4799e776aa3d074d5842e94f190d966bfb52dc0b653bdb6c388fb8347",
+    "site/index.html": "7da05d44289802cfdc11557050baf2f4f00acd0506a5b00159357101a44d4e74",
     "site/mathesis-materials.json": "471e99368b7b66d8fe407f487d89943ab4fa0917ee435f72ee957dfecc5cf894",
     "site/zh/index.html": "c18493736669247b621c820bf59dcc55498bf1097a45e532b91ba00fc0958f43",
+    "source.archive": "827ec27485b7e22ccc9dcc2565101df9820fff8639f2791e4931040902c2e6c8",
     "versions/v2/.mathesis/generated.json": "322d2667fa781c69fa15cf3e2a40c221d99a1f602039dffaef400fc74f6ae680",
     "versions/v2/CHANGELOG.md": "5b9f7093fc8c369382465584ce97f40d7afc63a433f87cda0d1ededf7d1971bc",
     "versions/v2/CITATION.cff": "c9d842ea58881f95064b422e28d18592903b490d67d38c2a97eece51c476efc0",
@@ -72,7 +75,8 @@
     "versions/v2/manuscript/verification.json": "f8b86dc8bfbeb6b3c3ee22f2ca303692fc2896349d8054ef0527d72650f939f5",
     "versions/v2/manuscript/verify.py": "da1df1849a2fdd4a8b4e366ba318011792c87a9d38af1b74fd6957881da93b26",
     "versions/v2/paper.json": "bd299de7a2d490e198997ccb06c51c7f438bdca2da79b2245506f5136ea87518",
-    "versions/v2/paper.pdf": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695"
+    "versions/v2/paper.pdf": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695",
+    "versions/v2/source.archive": "827ec27485b7e22ccc9dcc2565101df9820fff8639f2791e4931040902c2e6c8"
   },
   "version": 2,
   "work": "pozsgay-wanless-nonlinear-classical-factors"
