@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 104170,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695",
       "sha256": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695"
     },
     "source": {
       "bytes": 18509,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "827ec27485b7e22ccc9dcc2565101df9820fff8639f2791e4931040902c2e6c8",
       "sha256": "827ec27485b7e22ccc9dcc2565101df9820fff8639f2791e4931040902c2e6c8"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 104170,
+      "sha256": "f0580902b8a6302e50f88e18480c38647cad878c4eee83a0cd272ee698c9a695",
       "url": "/api/v1/collected-papers/pozsgay-wanless-nonlinear-classical-factors/files/pdf?version=2"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "pozsgay-wanless-nonlinear-classical-factors",
     "repository_name": "10.5281-zenodo.23903312",
     "source": {
+      "bytes": 18509,
+      "sha256": "827ec27485b7e22ccc9dcc2565101df9820fff8639f2791e4931040902c2e6c8",
       "url": "/api/v1/collected-papers/pozsgay-wanless-nonlinear-classical-factors/files/source?version=2"
     },
     "title": "Resolving Pozsgay–Wanless's factor-perfection question and qubit decomposition conjecture",
